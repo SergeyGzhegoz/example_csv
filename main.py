@@ -1,3 +1,5 @@
+from emp_csv import file_open
+
 FILENAME = "data.csv"
 
 MENU = {
@@ -18,6 +20,6 @@ for k, v in MENU.items():
 while True:
     action = input('>_')
     if action == '1':
-        pass
+        file_open(FILENAME)
     elif action == 'exit':
         break
