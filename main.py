@@ -1,4 +1,4 @@
-from emp_csv import file_open, insert, show_rows, save
+from emp_csv import file_open, insert, show_rows, save, drop_by_arg
 
 FILENAME = "data.csv"
 
@@ -23,6 +23,8 @@ while True:
         file_open(FILENAME)
     elif action == '2':
         insert(input('ФИО: '), input('Возраст: '), input('Телефон: '), input('Отдел: '))
+    elif action == '3':
+        print(drop_by_arg(input("Значение: "),input("Колонка: ")))
     elif action == '6':
         save(FILENAME)
     elif action == '7':

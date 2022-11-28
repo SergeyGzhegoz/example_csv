@@ -26,6 +26,16 @@ def insert(fio, age, tel, otd):
     print("Данные добавлены")
 
 
+# Удаление
+def drop_by_arg(val, col_name="фио"):
+    global csv_file
+    try:
+        csv_file = list(filter(lambda x: x[col_name] != val, csv_file))
+    except Exception as e:
+        return f"Строка со значением {val} поля {col_name} не найдена"
+    return f"Строка со значением {val} поля {col_name} удалена!"
+
+
 # Сохранить
 def save(fine_name):
     with open(fine_name, 'w', encoding='utf-8', newline='') as file:
