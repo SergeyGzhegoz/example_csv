@@ -36,6 +36,16 @@ def drop_by_arg(val, col_name="фио"):
     return f"Строка со значением {val} поля {col_name} удалена!"
 
 
+# Поиск
+def find(val, col_name='фио'):
+    print(*list(filter(lambda x: x[col_name] == val, csv_file)))
+
+
+# Средний возраст
+def avg_age():
+    print("Средний возраст: ", sum([int(row['возраст']) for row in csv_file]) // len(csv_file))
+
+
 # Сохранить
 def save(fine_name):
     with open(fine_name, 'w', encoding='utf-8', newline='') as file:
