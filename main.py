@@ -1,4 +1,4 @@
-from emp_csv import file_open
+from emp_csv import file_open, insert, show_rows
 
 FILENAME = "data.csv"
 
@@ -21,5 +21,10 @@ while True:
     action = input('>_')
     if action == '1':
         file_open(FILENAME)
+    elif action == '2':
+        insert(input('ФИО: '), input('Возраст: '), input('Телефон: '), input('Отдел: '))
+    elif action == '7':
+        show_rows()
+
     elif action == 'exit':
         break
